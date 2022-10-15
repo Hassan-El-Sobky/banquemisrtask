@@ -1,6 +1,6 @@
 
 <div class="Container">
-
+    <div class="wrapper">
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
   
@@ -35,6 +35,155 @@
   
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-  </table>
+  </table>   
+  <button (click)="toggleFacts()" mat-raised-button color="primary">Total Nutrition</button>
+</div>
+
+<section *ngIf="toggleFlag" class="performance-facts">
+    <header class="performance-facts__header">
+      <h1 class="performance-facts__title">Nutrition Facts</h1>
+    </header>
+    <table class="performance-facts__table">
+      <thead>
+        <tr>
+          <th colspan="3" class="small-info">
+            Amount Per Serving
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th colspan="2">
+            <b>Calories</b>
+         
+          </th>
+          <td>
+           
+            {{ingredintsState.calories}}
+          </td>
+        </tr>
+        <tr class="thick-row">
+          <td colspan="3" class="small-info">
+            <b>% Daily Value*</b>
+          </td>
+        </tr>
+        <tr>
+          <th colspan="2">
+            <b>Total Fat</b>
+            <b>{{ingredintsState.totalNutrients.FAT.quantity | number: '1.1'}}{{ingredintsState.totalNutrients.FAT.unit}}</b>
+          </th>
+          <td>
+            <b>{{ingredintsState.totalDaily.FAT.quantity | number: '1.1'}}{{ingredintsState.totalDaily.FAT.unit}}</b>
+          </td>
+        </tr>
+        <tr>
+          <td class="blank-cell">
+          </td>
+          <th>
+            Saturated Fat
+            <b>{{ingredintsState.totalNutrients.FASAT.quantity | number: '1.1'}}{{ingredintsState.totalDaily.FASAT.unit}}</b>
+          </th>
+          <td>
+            <b>{{ingredintsState.totalDaily.FASAT.quantity | number: '1.1'}}{{ingredintsState.totalDaily.FASAT.unit}}</b>
+          </td>
+        </tr>
+        <tr>
+          <td class="blank-cell">
+          </td>
+          <th>
+            Trans Fat
+            0g
+          </th>
+          <td>
+          </td>
+        </tr>
+        <tr>
+          <th colspan="2">
+            <b>Cholesterol</b>
+            <b>{{ingredintsState.totalNutrients.CHOLE.quantity | number: '1.1'}}{{ingredintsState.totalNutrients.CHOLE.unit}}</b>
+          </th>
+          <td>
+            <b>{{ingredintsState.totalDaily.CHOLE.quantity | number: '1.1'}}{{ingredintsState.totalDaily.CHOLE.unit}}</b>
+          </td>
+        </tr> 
+        <tr>
+          <th colspan="2">
+            <b>Sodium</b>
+            <b>{{ingredintsState.totalNutrients.NA.quantity | number: '1.1'}}{{ingredintsState.totalNutrients.NA.unit}}</b>
+          </th>
+          <td>
+            <b>{{ingredintsState.totalDaily.NA.quantity | number: '1.1'}}{{ingredintsState.totalDaily.NA.unit}}</b>
+          </td>
+        </tr>
+        <tr>
+          <th colspan="2">
+            <b>Total Carbohydrate</b>
+            <b>{{ingredintsState.totalNutrients.CHOCDF.quantity | number: '1.1'}}{{ingredintsState.totalNutrients.CHOCDF.unit}}</b>
+          </th>
+          
+          <td>
+            <b>{{ingredintsState.totalDaily.CHOCDF.quantity | number: '1.1'}}{{ingredintsState.totalDaily.CHOCDF.unit}}</b>
+          </td>
+        </tr>
+        <tr>
+          <td class="blank-cell">
+          </td>
+          <th>
+            Dietary Fiber
+            <b>{{ingredintsState.totalNutrients.FIBTG.quantity | number: '1.1'}}{{ingredintsState.totalNutrients.FIBTG.unit}}</b>
+          </th>
+          <td>
+            <b>{{ingredintsState.totalDaily.FIBTG.quantity | number: '1.1'}}{{ingredintsState.totalDaily.FIBTG.unit}}</b>
+          </td>
+        </tr>
+        <tr>
+          <td class="blank-cell">
+          </td>
+          <th>
+            Sugars
+            <b>{{ingredintsState.totalNutrients.SUGAR.quantity | number: '1.1'}}{{ingredintsState.totalNutrients.SUGAR.unit}}</b>
+          </th>
+          <td>
+          </td>
+        </tr>
+        <tr class="thick-end">
+          <th colspan="2">
+            <b>Protein</b>
+            {{ingredintsState.totalNutrients.PROCNT.quantity | number: '1.1'}}{{ingredintsState.totalNutrients.PROCNT.unit}}
+          </th>
+          <td>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   
+    <table class="performance-facts__table--grid">
+      <tbody>
+        <tr>
+          <td colspan="2">
+            Potassium
+            {{ingredintsState.totalDaily.K.quantity | number: '1.1'}}{{ingredintsState.totalDaily.K.unit}}
+          </td>
+          <td>
+            Vitamin C
+            {{ingredintsState.totalDaily.VITC.quantity | number: '1.1'}}{{ingredintsState.totalDaily.VITC.unit}}
+          </td>
+        </tr>
+        <tr class="thin-end">
+          <td colspan="2">
+            Calcium
+            {{ingredintsState.totalDaily.CA.quantity | number: '1.1'}}{{ingredintsState.totalDaily.CA.unit}}
+          </td>
+          <td>
+            Iron
+            {{ingredintsState.totalDaily.FE.quantity | number: '1.1'}}{{ingredintsState.totalDaily.FE.unit}}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <p class="small-info">* Percent Daily Values are based on a 2,000 calorie diet. Your daily values may be higher or lower depending on your calorie needs:</p>
+  
+  
+  </section>
 </div>
