@@ -1,0 +1,14 @@
+
+<form class="example-form" [formGroup]="ingredienttextArea" (ngSubmit)="submitForm()">
+    <div class="continer">
+      <p>Enter an ingredient list list for what you are cooking, like  <span class="heightLight">"1 cup rice, 10 oz chickpeas"</span>, etc.</p>
+       <p>
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Enter each ingredient on a new line.</mat-label>
+          <textarea formControlName="ingredints"  matInput  rows="9" cols="40"></textarea>
+        </mat-form-field>
+        </p>
+        <button [disabled]="ingredienttextArea.invalid" mat-raised-button color="primary">Analyze</button>
+      </div> 
+    
+    </form>

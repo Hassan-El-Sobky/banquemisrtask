@@ -1,0 +1,40 @@
+
+<div class="Container">
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+  
+    <!-- Quantity Column -->
+    <ng-container matColumnDef="Quantity">
+      <th mat-header-cell *matHeaderCellDef> Quantity </th>
+      <td mat-cell *matCellDef="let element"> {{element.parsed[0].quantity}} </td>
+    </ng-container>
+  
+    <!-- Unit Column -->
+    <ng-container matColumnDef="Unit">
+      <th mat-header-cell *matHeaderCellDef> Unit </th>
+      <td mat-cell *matCellDef="let element"> {{element.parsed[0].measure}} </td>
+    </ng-container>
+  
+    <!-- Food Column -->
+    <ng-container matColumnDef="Food">
+      <th mat-header-cell *matHeaderCellDef> Food </th>
+      <td mat-cell *matCellDef="let element"> {{element.parsed[0].food}} </td>
+    </ng-container>
+  
+    <!-- Calories Column -->
+    <ng-container matColumnDef="Calories">
+      <th mat-header-cell *matHeaderCellDef> Calories </th>
+      <td mat-cell *matCellDef="let element"> {{element.parsed[0].nutrients.ENERC_KCAL.quantity | number }} {{element.parsed[0].nutrients.ENERC_KCAL.unit}} </td>
+    </ng-container>
+    <!-- Weight Column -->
+    <ng-container matColumnDef="Weight">
+        <th mat-header-cell *matHeaderCellDef> Weight </th>
+        <td mat-cell *matCellDef="let element"> {{element.parsed[0].weight | number}} g</td>
+      </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  
+</div>
