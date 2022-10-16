@@ -19,10 +19,10 @@ export class IngDetailsComponent implements OnInit {
 
   ngOnInit(): void {
    this._ingSate.getIngredints().subscribe(res=>{
-      console.log(res);
+     
        this.ingredintsState=res;
        this.dataSource=this.ingredintsState.ingredients
-       console.log(this.dataSource);
+      
        
     });
    
