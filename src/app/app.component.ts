@@ -11,4 +11,5 @@ export class AppComponent {
     public _loaderService:LoaderService
   ){}
   title = 'bmtask';
+  
 }

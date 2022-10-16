@@ -9,6 +9,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { IngredintsFormComponent } from './components/ingredints-form/ingredints-form.component';
 import { IngDetailsComponent } from './components/ing-details/ing-details.component';
 import { InterceptorInterceptor } from './loader/interceptor.interceptor';
+import { ErrorHandlerInterceptor } from './interceptors/error-handler.interceptor';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { InterceptorInterceptor } from './loader/interceptor.interceptor';
 
   ],
   providers: [
-    {provide:HTTP_INTERCEPTORS,useClass:InterceptorInterceptor,multi:true}
+    {provide:HTTP_INTERCEPTORS,useClass:InterceptorInterceptor,multi:true},
+    {provide:HTTP_INTERCEPTORS,useClass:ErrorHandlerInterceptor,multi:true}
   ],
   bootstrap: [AppComponent]
 })

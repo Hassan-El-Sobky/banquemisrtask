@@ -36,7 +36,7 @@
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>   
-  <button (click)="toggleFacts()" mat-raised-button color="primary">Total Nutrition</button>
+  <button class="toggleBtn" (click)="toggleFacts()" mat-raised-button color="primary">Total Nutrition</button>
 </div>
 
 <section *ngIf="toggleFlag" class="performance-facts">

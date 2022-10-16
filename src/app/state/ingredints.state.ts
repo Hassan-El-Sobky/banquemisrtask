@@ -5,7 +5,8 @@ import { Iingredints } from '../model/ingredints.model';
   providedIn: 'root'
 })
 export class IngredintsService {
-  ingredintSubject:BehaviorSubject<Iingredints|any> = new BehaviorSubject({});
+  public errorInRequest:BehaviorSubject<boolean>=new BehaviorSubject<boolean>(false);
+  public ingredintSubject:BehaviorSubject<Iingredints|any> = new BehaviorSubject({});
   constructor() { }
   setIngredints(ingredints:Iingredints) {
     this.ingredintSubject.next(ingredints);

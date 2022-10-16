@@ -11,6 +11,9 @@
         </mat-form-field>
         </p>
         <button [disabled]="ingredienttextArea.invalid" mat-raised-button color="primary">Analyze</button>
+        <p class="error" *ngIf="_ingState.errorInRequest | async">We cannot calculate the nutrition for some ingredients. Please check the ingredient spelling or if you have entered a quantities for the ingredients</p>
+
       </div> 
-    
     </form>
+
+   

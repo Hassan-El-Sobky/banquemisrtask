@@ -13,8 +13,9 @@ export class IngredintsFormComponent implements OnInit {
 
   constructor(
     private _ingService:IngredintsapiService,
-    private _ingState:IngredintsService,
+    public _ingState:IngredintsService,
     private _router:Router,
+    
     
     ) {}
   
@@ -24,13 +25,12 @@ export class IngredintsFormComponent implements OnInit {
   })
 
   submitForm() {
-    //  console.log(this.ingredienttextArea.value.ingredints.);
+   
      let ingValues:string=this.ingredienttextArea.value.ingredints;
      let ingNewFroamt=ingValues.split('\n');
      let ingData:Idata={ingr:ingNewFroamt};
-     console.log(ingNewFroamt);
      this._ingService.getIngredintsInfo(ingData).subscribe(res=>{
-      // console.log(res);
+  
       this._ingState.setIngredints(res);
       this._router.navigate(['/details'])
      })
