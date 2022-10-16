@@ -14,7 +14,8 @@ export class IngredintsFormComponent implements OnInit {
   constructor(
     private _ingService:IngredintsapiService,
     private _ingState:IngredintsService,
-    private _router:Router
+    private _router:Router,
+    
     ) {}
   
  

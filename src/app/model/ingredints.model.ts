@@ -11,6 +11,20 @@ export interface Icomon{
 
 export interface Iingredints{
   calories:number,
+  dietLabels:string[],
+  healthLabels:string[],
+  totalDaily:{
+    ENERC_KCAL:Icomon,
+    FAT:Icomon,
+    FASAT:Icomon,
+    P:Icomon,
+    FE:Icomon,
+    CA:Icomon,
+    CHOCDF:Icomon,
+    SUGAR:Icomon,
+    NA:Icomon,
+    ZN:Icomon,
+  }
   totalWeight:number,
   totalNutrients:{
     ENERC_KCAL:Icomon,
@@ -43,7 +57,20 @@ export interface Iingredints{
         }
     ]
   }
-]
+],
+yield:number,
+totalNutrientsKCal:{
+  ENERC_KCAL:Icomon,
+  FAT:Icomon,
+  FASAT:Icomon,
+  P:Icomon,
+  FE:Icomon,
+  CA:Icomon,
+  CHOCDF:Icomon,
+  SUGAR:Icomon,
+  NA:Icomon,
+  ZN:Icomon,
+}
 
 }
 
